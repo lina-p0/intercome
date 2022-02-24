@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+}
+
+.enter {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 100vh;
+}
+
+.butt {
+  font-family: "Roboto", sans-serif;
+  font-size: 30px;
+  background-color: rgb(145, 128, 240);
+  width: 160px;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: rgb(255, 246, 234);
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.butt:hover,
+.butt:focus,
+.butt:active {
+  box-shadow: 0 0 20px rgba(162, 137, 252, 0.726);
+}
+
+.burger_menu_btn{
+    position: fixed;
+    top: 10px;
+    left:10px;
+    z-index: 30;
+    width: 60px;
+    height: 60px;
+    border-radius: 20%;
+    background-color: rgb(145, 128, 240);
+    cursor: pointer;
+    
+}
+
+.burger_menu_btn:hover .burger_lines{
+    filter: brightness(0.9);
+}
+
+.burger_lines,
+.burger_lines::after,
+.burger_lines::before{
+    position: absolute;
+    width: 40px;
+    height: 6px;
+    background-color: rgb(255, 246, 234);
+}
+
+.burger_lines{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.burger_lines::before{
+    content: '';
+    top: -12px;
+}
+
+.burger_lines::after{
+    content: '';
+    top:12px;
+}
+
+.burger_menu_active .burger_menu_btn,
+.burger_menu_active .burger_lines{
+    background-color: transparent;
+}
+
+.burger_menu_active .burger_lines{
+    background-color: transparent;
+}
+
+.burger_menu_active .burger_lines::before{
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.burger_menu_active .burger_lines::after{
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+.burger_menu_active .burger_menu_btn{
+    box-shadow: 0 0 0;
+}
+
+.burger_menu_nav{
+    padding-top: 70px;
+    position: fixed;
+    z-index: 20;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    background-color: rgb(145, 128, 240);
+    left: -100%;
+    overflow-y: auto;
+}
+
+.burger_menu_active .burger_menu_nav{
+    left: 0;
+}
+
+.burger_menu_link{
+    padding: 20px;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgb(255, 246, 234);
+    
+}
+
+.burger_menu_link:hover{
+    filter: brightness(0.7);
+}
+
+.burger_overlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+}
+
+.burger_menu_active .burger_overlay{
+    display: block;
+}
